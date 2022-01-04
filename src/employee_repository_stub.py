@@ -16,3 +16,9 @@ class EmployeeRepositoryStub(EmployeeRepository):
     def get_by_id(self, employee_id: str) -> Employee:
         if employee_id in self.employees_by_id:
             return self.employees_by_id[employee_id]
+
+
+class RepoStubFactory:
+    @staticmethod
+    def get_repo() -> EmployeeRepository:
+        return EmployeeRepositoryStub()

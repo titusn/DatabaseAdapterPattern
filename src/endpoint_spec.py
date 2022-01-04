@@ -4,15 +4,14 @@ from expects import expect, equal, raise_error, have_len, be_an
 
 from endpoint import EmployeeEndpoint
 from employee import Employee
-from repo_stub_factory import RepoStubFactory
-
+from employee_repository_stub import RepoStubFactory
 
 
 with description(EmployeeEndpoint) as self:
 
     with before.each:
-        repo = RepoStubFactory.get_repo()
-        self.endpoint = EmployeeEndpoint(repo=self.repo)
+        self.repo = RepoStubFactory.get_repo()
+        self.endpoint = EmployeeEndpoint()
 
     with context("Health service endpoint"):
         with it("returns pong after ping"):

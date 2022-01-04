@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
-from employee_repository import EmployeeRepository
-from replit_repo_factory import ReplitRepoFactory
+from employee_repository_replit_db import ReplitRepoFactory, EmployeeRepository
 
 app = FastAPI()
 router = InferringRouter()
@@ -21,8 +20,7 @@ class EmployeeEndpoint:
 
     @router.get("employees/{employee_id}")
     def get_employee_by_id(self, employee_id: str, repo: EmployeeRepository = Depends(repository)):
-        result = repo.get_by_id(employee_id)
-        if result is None:
+        try:
+            repo.get_by_id(employee_id)
+        except KeyError:
             raise HTTPException(status_code=404, detail="Employee not found")
-        else:
-            return result

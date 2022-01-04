@@ -11,4 +11,9 @@ class EmployeeRepositoryReplitDb(EmployeeRepository):
         if db.get(employee_id):
             return Employee(db.get(employee_id))
         raise KeyError(employee_id)
-    
+
+
+class ReplitRepoFactory:
+    @staticmethod
+    def get_repo() -> EmployeeRepository:
+        return EmployeeRepositoryReplitDb()
