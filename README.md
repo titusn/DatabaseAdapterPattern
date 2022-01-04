@@ -209,7 +209,7 @@ class EmployeeEndpoint:
 
 After that, you can access the repo by calling e.g. `repo.get_by_id(employee_id)`.
 
-It is now your task to carry through all these changes, while keeping the tests green. In the end, you should end up with a working specification (unit test set) as well as a working application. How you can verify that has extensively been explained in the beginning of this instruction file, namely in the section "Getting acquainted". Use the live documentation as described therein.
+It is now your task to carry out all these changes, while keeping the tests green. In the end, you should end up with a working specification (unit test set) as well as a working application. How you can verify that has extensively been explained in the beginning of this instruction file, namely in the section "Getting acquainted". Use the live documentation as described therein.
 
 
 ## Our second endpoint
@@ -227,7 +227,7 @@ def delete_employee(self,
 
 Implement this endpoint:
 
-1. writie the scenarios first (also think about what should happen when we try to delete an employee (with an ID) that does not exist)
+1. write the scenarios first (also think about what should happen when we try to delete an employee (with an ID) that does not exist)
 2. make a scenarios green first (by implementing the stub) before continuing to anything else
 3. implement the replit repository as well and test it by running the application and using the OpenAPI live documentation.
 
